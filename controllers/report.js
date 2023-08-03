@@ -1,4 +1,5 @@
 const Report = require("../models/report")
+const { report } = require("../routes/patient")
 
 const getStatusReport =async (req, res) => {
     const status = req.params.status
@@ -7,7 +8,7 @@ const getStatusReport =async (req, res) => {
     
     if (reports) {
         console.log(reports)
-        res.send("found reports with the specified status ")
+        res.json(reports)
 }
 }
 

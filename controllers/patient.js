@@ -59,7 +59,7 @@ const allReport = async (req, res) => {
 
     const patientReports = await Report.find({ patientId: id })
     console.log(patientReports)
-    res.send('found patient records')
+    res.json(patientReports)
     
 }
 

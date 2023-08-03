@@ -6,7 +6,7 @@ const bcrypt = require('bcrypt')
 const register = async (req, res) => {
     const { username, password } = req.body;
     try {
-        const newDoctor = await new Doctor({
+        const newDoctor = new Doctor({
             name: username,
             password: password
         })
