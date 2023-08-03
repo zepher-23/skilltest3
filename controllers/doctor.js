@@ -36,14 +36,16 @@ const register = async (req, res) => {
 const login = (req, res) => {
 
     const { username, password } = req.body
-    Doctor.findOne({ name: username }).then(doctor => {
+    Doctor.findOne({ name: username }).then(async doctor => {
+        console.log(doctor)
         const verified = bcrypt.compare(password, doctor.password);
         if (verified) {
             const token = authenticate.genJWT(username, password)
                 res.setHeader(
                   'Set-Cookie',
-                  `jwt=${token}; HttpOnly;`
-                );
+                  `jwt=${token}; path=/; HttpOnly;`
+            );
+            
 
             res.send(token)
         }
