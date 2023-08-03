@@ -11,13 +11,21 @@ const register = async (req, res) => {
             password: password
         })
 
-        newDoctor.save().then(() => {
+        Doctor.findOne({ name: username, }).then(doctor => {
+            if (doctor) {
+                res.send(doctor.name + " is already registered")
+            } else {
+                 newDoctor.save().then(() => {
             res.send("new doctor registered")
         }).catch(err => {
             console.log("/doctor/register error: ", err)
         
             res.send("/doctor/register ERROR")
         })
+                
+            }
+        })
+
     } catch (err) {
         console.log("error saving new doctor");
         res.send("error saving new doctor")

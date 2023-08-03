@@ -4,10 +4,15 @@ const Report = require("../models/report")
 
 const register = async (req, res) => {
 
+
+
     const { phone } = req.body
-    Patient.findOne({ phone: phone }).then(patient => {
-        if (patient) {
-            res.send("patient exists")
+    Patient.findOne({ phone: phone }).then(async patient => {
+      if (patient) {
+        const patientReports = await Report.find({ patientId: patient._id }) 
+        res.json(patientReports)
+
+           
         }
         else {
             const newPatient = new Patient({ phone: phone })
@@ -29,7 +34,8 @@ const register = async (req, res) => {
 const createReport = async (req, res) => {
   try {
     const patientId = req.params.id;
-    const {doctor, status, date} = req.body;
+    const { doctor, status, date } = req.body;
+    
 
     const newReport = new Report({
       doctor,

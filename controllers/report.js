@@ -9,7 +9,8 @@ const getStatusReport =async (req, res) => {
     if (reports) {
         console.log(reports)
         res.json(reports)
-}
+    }
+    
 }
 
 module.exports = {getStatusReport}
