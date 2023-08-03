@@ -39,7 +39,12 @@ const login = (req, res) => {
     Doctor.findOne({ name: username }).then(doctor => {
         const verified = bcrypt.compare(password, doctor.password);
         if (verified) {
-            const token = authenticate.genJWT(username,password)
+            const token = authenticate.genJWT(username, password)
+                res.setHeader(
+                  'Set-Cookie',
+                  `jwt=${token}; HttpOnly;`
+                );
+
             res.send(token)
         }
         else {

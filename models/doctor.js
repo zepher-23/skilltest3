@@ -1,11 +1,13 @@
 const mongoose = require('mongoose')
 const bcrypt = require('bcrypt')
 
+//define schema
 const doctorSchema = mongoose.Schema({
     name: { type: String, required: true },
     password:{type:String, required:true}
 })
 
+// hash password before saving it in database
 doctorSchema.pre('save', async function (next) {
   const doctor = this;
 
@@ -30,7 +32,7 @@ doctorSchema.pre('save', async function (next) {
   }
 });
 
-
+//create the doctor model using the schema defined
 const Doctor = mongoose.model('Doctor', doctorSchema)
 
 module.exports = Doctor;
