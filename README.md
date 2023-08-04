@@ -1,9 +1,11 @@
 HOSPITAL API ##MERNSTACK
 
+
+
+-----------------------------------------------------------------------------------------
 NOTE:
 Accessing certain endpoints without doctor logging in will return an error response.
 
------------------------------------------------------------------------------------------
 
 FUNCTIONS:
 1. Doctor Register
