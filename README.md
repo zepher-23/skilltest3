@@ -1,4 +1,8 @@
 HOSPITAL API ##MERNSTACK
+
+NOTE:
+Accessing certain endpoints without doctor logging in will return an error response.
+
 -----------------------------------------------------------------------------------------
 
 FUNCTIONS:
@@ -27,7 +31,5 @@ RUNNING THE API SERVER:
 2. `cd skilltest3` (or whatever the folder name is.)
 3. `npm install`
 4. `npm start`
-
------------------------------------------------------------------------------------------------------------
 
 
