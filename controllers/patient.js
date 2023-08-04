@@ -2,9 +2,9 @@
 const Patient = require("../models/patient")
 const Report = require("../models/report")
 
+
+//function to register patients using their phone number 
 const register = async (req, res) => {
-
-
 
     const { phone } = req.body
     Patient.findOne({ phone: phone }).then(async patient => {
@@ -12,7 +12,6 @@ const register = async (req, res) => {
         const patientReports = await Report.find({ patientId: patient._id }) 
         res.json(patientReports)
 
-           
         }
         else {
             const newPatient = new Patient({ phone: phone })
@@ -30,6 +29,8 @@ const register = async (req, res) => {
     })
     
 }
+
+//function to create a report for the patient (patient id is sent in the url parameter)
 
 const createReport = async (req, res) => {
   try {

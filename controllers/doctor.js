@@ -2,7 +2,7 @@ const Doctor = require("../models/doctor")
 const authenticate = require("../controllers/authenticate")
 const bcrypt = require('bcrypt')
 
-
+//function to register the doctor in the database
 const register = async (req, res) => {
     const { username, password } = req.body;
     try {
@@ -33,6 +33,9 @@ const register = async (req, res) => {
 
 }
 
+
+
+// function to sign up the doctor and set a jwt token in request cookies
 const login = (req, res) => {
 
     const { username, password } = req.body

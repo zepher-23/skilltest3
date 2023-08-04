@@ -1,6 +1,8 @@
 const Report = require("../models/report")
 const { report } = require("../routes/patient")
 
+
+//function to get all report info
 const getStatusReport =async (req, res) => {
     const status = req.params.status
 

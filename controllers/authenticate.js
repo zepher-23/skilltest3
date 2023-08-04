@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken')
 
-
+// function to authenticate user authorization using jwt (middleware)
 const auth = async (req, res, next) => {
   const secretKey = 'hospital';
   try {
@@ -19,9 +19,7 @@ const auth = async (req, res, next) => {
       }
 
       // Token is valid, you can access the decoded payload in 'decoded'
-      // For example, to access the 'name' field: decoded.name
 
-      // You can also attach the decoded payload to the request object for future use
       req.user = decoded;
 
       // Proceed to the next middleware or route handler
