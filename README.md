@@ -24,7 +24,7 @@ ENDPOINTS:
 RUNNING THE API SERVER:
 
 1. git clone `https://github.com/zepher-23/skilltest3.git`
-2. cd `skilltest3` (or whatever the folder name is.)
+2. cd 'skilltest3' (or whatever the folder name is.)
 3. npm install
 4. npm start
 
