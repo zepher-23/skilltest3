@@ -1,7 +1,4 @@
 HOSPITAL API ##MERNSTACK
-
-
-
 -----------------------------------------------------------------------------------------
 NOTE:
 Accessing certain endpoints without doctor logging in will return an error response.
