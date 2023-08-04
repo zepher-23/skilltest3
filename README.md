@@ -9,7 +9,7 @@ FUNCTIONS:
 4. Create Patient Report
 5. Get Patients Report
 6. Get All Reports by Status
-
+-------------------------------------------------------------------------------------------------
 
 ENDPOINTS:
 
@@ -20,6 +20,7 @@ ENDPOINTS:
 5. patient/:id/all_reports - Get methods, id of the patient is passed as URL parameter, returns all the reports of that patient.
 6. report/:status - Get method, status is passed as URL parameter, returns all patients reports with the specified status.
 
+-----------------------------------------------------------------------------------------------------
 
 RUNNING THE API SERVER:
 
@@ -28,5 +29,6 @@ RUNNING THE API SERVER:
 3. `npm install`
 4. `npm start`
 
+-----------------------------------------------------------------------------------------------------------
 
 
